@@ -1,0 +1,10 @@
+.app-header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.app-title {
+  font-family: 'Playfair Display', serif;
+  color: #4A90E2;
+  text-shadow: 2px 2px #aaa;
+}
