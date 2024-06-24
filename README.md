@@ -61,7 +61,7 @@ pet-viewer/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/pet-viewer.git
+   git clone [https://github.com/sourabh707/Pet-Viewer.git]
    cd pet-viewer
    ```
 
