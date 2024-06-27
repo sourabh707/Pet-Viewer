@@ -9,11 +9,22 @@ const PetDetails = () => {
   const [pet, setPet] = useState(null);
   const [loading, setLoading] = useState(true);
 
+
+  const defaultValues = {
+    name: 'Unknown',
+    type: 'Unknown',
+    breed: 'Unknown',
+    weight: 'Unknown',
+    color: 'Unknown',
+  };
+
+  
+
   useEffect(() => {
     const getPetDetails = async () => {
       const pets = await fetchPets();
       if (Array.isArray(pets)) {
-        const selectedPet = pets.find((p) => p.name === petName);
+        const selectedPet = pets?.find((p) => p.name === petName);
         setPet(selectedPet);
       }
       setLoading(false);
@@ -56,19 +67,19 @@ const PetDetails = () => {
         </Box>
         <CardContent>
           <Typography variant="h4" component="div" gutterBottom>
-            {pet.name}
+            {pet.name || defaultValues.name }
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Type: {pet.type}
+            Type: {pet.type || defaultValues.type}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Breed: {pet.breed}
+            Breed: {pet.breed || defaultValues.breed}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Weight: {pet.weight}
+            Weight: {pet.weight || defaultValues.weight}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Color: {pet.color}
+            Color: {pet.color || defaultValues.color}
           </Typography>
         </CardContent>
       </Card>

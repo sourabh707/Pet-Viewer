@@ -11,7 +11,7 @@ const PetList = () => {
   useEffect(() => {
     const getPets = async () => {
       const petData = await fetchPets();
-      if (petData && Array.isArray(petData)) {
+      if (petData && Array?.isArray(petData)) {
         setPets(petData);
       }
     };
@@ -22,7 +22,8 @@ const PetList = () => {
     setSelectedPet(event.target.value);
   };
 
-  const handleViewDetails = () => {
+  const handleViewDetails =  async () => {
+    
     if (selectedPet) {
       navigate(`/pet-details/${selectedPet}`);
     }

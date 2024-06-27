@@ -9,11 +9,11 @@ const App = () => {
   return (
     <Router>
       <Container>
-        <header className="app-header">
+        <div className="app-header">
           <Typography variant="h2" className="app-title">
             Pet Viewer
           </Typography>
-        </header>
+        </div>
         <Routes>
           <Route path="/" element={<PetList />} />
           <Route path="/pet-details/:petName" element={<PetDetails />} />
